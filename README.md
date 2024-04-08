@@ -31,6 +31,9 @@ pyinstaller main.py --onefile
 ```
 
 ## Usage
+If you just want to use the app, execute 4 and 5 step
+
+## Usage
 Run ``main.py`` or execute the file in ``dist`` folder
 
 ## License
