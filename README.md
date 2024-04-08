@@ -20,7 +20,7 @@ pip install pyinstaller
 ```
 winget install Gyan.FFmpeg
 ```
-4. Add ffmpeg to path in environmet variables
+5. Add ffmpeg to path in environmet variables
 ```
 C:\Users\[user]\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-7.0-full_build\bin
 ```
