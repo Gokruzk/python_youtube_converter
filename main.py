@@ -18,7 +18,7 @@ def main():
     helpmenu.add_command(label='About me', command=popup)
     menubar.add_command(label='Exit', command=root.destroy)
 
-    instrucciones = Label(root, text='Convert videos from YouTube to mp3\n\nIngresa el enlace aquí')
+    instrucciones = Label(root, text='Convert videos from YouTube to mp3\n\nInsert url here')
     instrucciones.grid(row=0, column=1)
 
     videos = Entry(root)
