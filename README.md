@@ -22,7 +22,7 @@ C:\Users\[user]\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Wi
 ```
 
 ## Usage
-Run main.py or execute the file in ``dist`` folder
+Run ``main.py`` or execute the file in ``dist`` folder
 
 ## License
 
