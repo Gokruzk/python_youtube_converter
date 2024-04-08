@@ -7,11 +7,11 @@ from popup import popups
 
 def check_url(url):
     flag = False
-    flag = 'youtube' == url[8:13]
-    if not flag:
-       flag = 'youtu' == url[12:17]
-
+    flag = 'youtu' == url[8:13]
+    if flag == False:
+        flag = 'youtu' == url[12:17]
     return flag
+
 
 def rename_file(file):
     # remove spaces
@@ -29,17 +29,17 @@ def action(url):
     enlace = url.get()
     if check_url(enlace):
         video = YouTube(enlace)
+        popups('Download', 'Downloading')
         descarga = video.streams.get_audio_only()
         descarga.download()
-        popups('Download', 'Downloading')
         # get file name
         file = descarga.default_filename
         # rename file
         input_file, output_file = rename_file(file)
         # convert to mp3
+        popups('Download', 'Successfully downloaded')
         convert(input_file, output_file)
         # remove mp4 file
         os.remove(input_file)
-        popups('Download', 'Successfully downloaded')
     else:
         popups('Process', 'It\'s not a youtube url')
