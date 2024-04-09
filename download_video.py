@@ -6,10 +6,7 @@ from popup import popups
 
 
 def check_url(url):
-    flag = False
-    flag = 'youtu' == url[8:13]
-    if flag == False:
-        flag = 'youtu' == url[12:17]
+    flag = 'youtu' == url[8:13] or 'youtu' == url[12:17]
     return flag
 
 
