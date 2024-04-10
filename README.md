@@ -32,7 +32,7 @@ pyinstaller main.py --onefile
 
 ## Usage
 1. If you just want to use the app without open the code, execute 4 and 5 step, then execute the file in ``dist`` folder
-2. Run ``main.py`` or execute the file in ``dist`` folder
+2. If you modify the code, just run ``main.py``
 
 ## License
 
