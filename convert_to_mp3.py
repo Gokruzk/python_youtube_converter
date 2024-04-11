@@ -8,7 +8,9 @@ def convert(input_file, output_file):
     ffmpeg_cmd = f'ffmpeg -i {
         input_file} -vn -acodec libmp3lame -ab 192000 -ar 44100 -y {output_file}'
     try:
+        #execute command
         subprocess.run(f'{ffmpeg_cmd}', shell=False)
+        #show message
         popups('Sucess', 'Successfully converted')
     except subprocess.CalledProcessError as e:
         print(e)
