@@ -27,14 +27,17 @@ def action(url):
     if check_url(enlace):
         video = YouTube(enlace)
         popups('Download', 'Downloading')
-        descarga = video.streams.get_audio_only()
-        descarga.download()
-        # get file name
-        file = descarga.default_filename
-        # rename file
-        input_file, output_file = rename_file(file)
-        # convert to mp3
-        popups('Download', 'Successfully downloaded')
+        try:
+            descarga = video.streams.get_audio_only()
+            descarga.download()
+            # get file name
+            file = descarga.default_filename
+            # rename file
+            input_file, output_file = rename_file(file)
+            # convert to mp3
+            popups('Download', 'Successfully downloaded')
+        except:
+            popups('Download', 'Download error')
         convert(input_file, output_file)
         # remove mp4 file
         os.remove(input_file)
