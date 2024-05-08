@@ -24,6 +24,7 @@ def rename_file(file):
 
 def action(url):
     enlace = url.get()
+    print(enlace)
     if check_url(enlace):
         video = YouTube(enlace)
         popups('Download', 'Downloading')
@@ -32,14 +33,16 @@ def action(url):
             descarga.download()
             # get file name
             file = descarga.default_filename
+            print(file)
             # rename file
             input_file, output_file = rename_file(file)
             # convert to mp3
             popups('Download', 'Successfully downloaded')
-        except:
+            convert(input_file, output_file)
+            # remove mp4 file
+            os.remove(input_file)
+        except Exception as e:
             popups('Download', 'Download error')
-        convert(input_file, output_file)
-        # remove mp4 file
-        os.remove(input_file)
+            print(e)
     else:
         popups('Process', 'It\'s not a youtube url')
