@@ -8,7 +8,8 @@ from popup import popups
 # download path
 home = Path.home()
 download_folder = Path(home, "Music Downloaded")
-os.mkdir(download_folder)
+if not download_folder.exists():
+    os.mkdir(download_folder)
 os.chdir(download_folder)
 
 
@@ -23,7 +24,9 @@ def rename_file(file):
     input_file = "".join(input_file)
     os.rename(file, input_file)
     # extract file name without '.mp4'
-    output_file = input_file[0:len(input_file) - 4]
+    output_file = Path(download_folder, file).stem
+    output_file = output_file.split(" ")
+    output_file = "".join(output_file)
     # create '.mp3' file name
     output_file += '.mp3'
     return [input_file, output_file]
@@ -40,11 +43,11 @@ def action(url):
             descarga.download()
             # get file name
             file = descarga.default_filename
-            print(file)
+            input_file = os.path.basename(Path(download_folder, file))
             # rename file
-            input_file, output_file = rename_file(file)
-            # convert to mp3
+            input_file, output_file = rename_file(input_file)
             popups('Download', 'Successfully downloaded')
+            # convert to mp3
             convert(input_file, output_file)
             # remove mp4 file
             os.remove(input_file)
