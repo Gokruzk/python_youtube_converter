@@ -1,8 +1,15 @@
 import os
+from pathlib import Path
 from pytube import YouTube
 from tkinter import messagebox as Messagebox
 from convert_to_mp3 import convert
 from popup import popups
+
+# download path
+home = Path.home()
+download_folder = Path(home, "Music Downloaded")
+os.mkdir(download_folder)
+os.chdir(download_folder)
 
 
 def check_url(url):
