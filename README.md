@@ -5,7 +5,12 @@
 1 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the followings modules.
 
 ```
-pip install pytube tk pyinstaller Gyan.FFmpeg
+pip install pytube tk pyinstaller
+```
+
+``If you are using Windows``
+```
+winget install ffmpeg
 ```
 
 2. Add ffmpeg to path in environmet variables
