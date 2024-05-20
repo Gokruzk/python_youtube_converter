@@ -20,7 +20,7 @@ C:\Users\[user]\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Wi
 
 ## Build
 ```
-> pyinstaller main.py --onefile --noconsole
+pyinstaller main.py --onefile --noconsole
 ```
 
 ## Usage
