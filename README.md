@@ -1,6 +1,6 @@
 # YouTube MP3 Converter
 
-## Installation
+## Requirements
 
 1 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the followings modules.
 
@@ -8,7 +8,7 @@
 pip install pytube tk pyinstaller
 ```
 
-1.1 If you are using Windows
+1.1 If you are using Windows, use the package manager [winget](https://learn.microsoft.com/es-es/windows/package-manager/winget/) to install the following module
 ```
 winget install ffmpeg
 ```
