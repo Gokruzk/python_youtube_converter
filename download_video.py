@@ -54,6 +54,7 @@ def action(url):
                             bytes_remaining: on_progress(stream, chunk, bytes_remaining, progressbar))
             descarga = video.streams.get_audio_only()
             descarga.download()
+            popups('Download', 'Successfully downloaded')
             # get file name
             file = descarga.default_filename
             input_file = os.path.basename(Path(download_folder, file))
@@ -63,7 +64,6 @@ def action(url):
             convert(input_file, output_file)
             # remove mp4 file
             os.remove(input_file)
-            popups('Download', 'Successfully downloaded')
         except Exception as e:
             popups('Download', 'Download error')
             print(e)

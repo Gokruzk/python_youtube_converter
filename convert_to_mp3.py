@@ -9,6 +9,8 @@ os.chdir(download_folder)
 
 
 def convert(input_file, output_file):
+    # show message
+    popups('Convertion', 'Converting to MP3')
     # ffmpeg command to convert .mp4 to .mp3
     ffmpeg_cmd = [
         'ffmpeg',
@@ -23,5 +25,6 @@ def convert(input_file, output_file):
         # execute command
         result = subprocess.run(ffmpeg_cmd, check=True)
         # show message
+        popups('Converted', 'Successfully converted to MP3')
     except subprocess.CalledProcessError as e:
         print(f'Error during conversion: {e}')
