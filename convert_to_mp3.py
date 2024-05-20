@@ -3,10 +3,6 @@ import subprocess
 from popup import popups
 from pathlib import Path
 
-home = Path.home()
-download_folder = Path(home, "Music Downloaded")
-os.chdir(download_folder)
-
 
 def convert(input_file, output_file):
     # show message
