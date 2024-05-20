@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 from pytube import YouTube
-from tkinter import messagebox as Messagebox
+from tkinter import ttk
 from convert_to_mp3 import convert
 from popup import popups
 
@@ -32,12 +32,25 @@ def rename_file(file):
     return [input_file, output_file]
 
 
+def on_progress(stream, chunk, bytes_remaining, progressbar: ttk.Progressbar):
+    """Callback function"""
+    total_size = stream.filesize
+    bytes_downloaded = total_size - bytes_remaining
+    pct_completed = bytes_downloaded / total_size * 100
+    progressbar['value'] = pct_completed
+    progressbar.update()
+
+
 def action(url):
+    progressbar = ttk.Progressbar(
+        orient="horizontal", length=300, mode="determinate")
+    progressbar.config(maximum=100)
+    progressbar.place(x=30, y=80, width=100)
     enlace = url.get()
     print(enlace)
     if check_url(enlace):
-        video = YouTube(enlace)
-        popups('Download', 'Downloading')
+        video = YouTube(enlace, on_progress_callback=lambda stream, chunk,
+                        bytes_remaining: on_progress(stream, chunk, bytes_remaining, progressbar))
         try:
             descarga = video.streams.get_audio_only()
             descarga.download()
@@ -46,11 +59,11 @@ def action(url):
             input_file = os.path.basename(Path(download_folder, file))
             # rename file
             input_file, output_file = rename_file(input_file)
-            popups('Download', 'Successfully downloaded')
             # convert to mp3
             convert(input_file, output_file)
             # remove mp4 file
             os.remove(input_file)
+            popups('Download', 'Successfully downloaded')
         except Exception as e:
             popups('Download', 'Download error')
             print(e)
