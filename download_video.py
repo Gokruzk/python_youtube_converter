@@ -49,9 +49,9 @@ def action(url):
     enlace = url.get()
     print(enlace)
     if check_url(enlace):
-        video = YouTube(enlace, on_progress_callback=lambda stream, chunk,
-                        bytes_remaining: on_progress(stream, chunk, bytes_remaining, progressbar))
         try:
+            video = YouTube(enlace, on_progress_callback=lambda stream, chunk,
+                            bytes_remaining: on_progress(stream, chunk, bytes_remaining, progressbar))
             descarga = video.streams.get_audio_only()
             descarga.download()
             # get file name
