@@ -25,7 +25,7 @@ pyinstaller main.py --onefile --noconsole
 
 ## Usage
 1. If you just want to use the app, execute the file in ``dist`` folder
-2. If you are going to modify the code, make sure to follow the installations steps and then run ``main.py``
+2. If you are going to modify the code, make sure to follow the requirements steps and then run ``main.py``
 3. The music will store into a folder called ``Music Downloaded`` in your ``root`` folder
 
 ## License
