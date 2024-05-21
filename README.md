@@ -16,7 +16,7 @@ winget install ffmpeg
 ```
 Linux: [apt](https://help.ubuntu.com/kubuntu/desktopguide/es/apt-get.html)
 ```
-sudo apt-get install ffmpeg
+sudo apt install ffmpeg
 ```
 
 ## Build
