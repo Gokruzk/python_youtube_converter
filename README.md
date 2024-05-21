@@ -34,18 +34,14 @@ pyinstaller main.py --onefile --noconsole
 ## Usage
 1. If you just want to use the app, execute the file in ``dist`` folder, make sure to have [ffmpeg](https://ffmpeg.org/download.html) installed.
 
-Windows
 ```
 cd dist
 ```
+Windows
 ```
 main.exe
 ```
-
 Linux
-```
-cd dist
-```
 ```
 ./main
 ```
