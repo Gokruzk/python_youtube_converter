@@ -13,11 +13,6 @@ pip install pytube tk pyinstaller
 winget install ffmpeg
 ```
 
-2 Add ffmpeg to path in environmet variables
-```
-C:\Users\[user]\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-7.0-full_build\bin
-```
-
 ## Build
 ```
 pyinstaller main.py --onefile --noconsole
