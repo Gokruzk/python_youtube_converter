@@ -2,13 +2,13 @@
 
 ## Requirements
 
-1. Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the followings modules.
+### Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the followings modules.
 
 ```
 pip install pytube tk pyinstaller
 ```
 
-2. Use a package manager to install [ffmpeg](https://ffmpeg.org/download.html).
+### Use a package manager to install [ffmpeg](https://ffmpeg.org/download.html).
 
 Windows: [winget](https://learn.microsoft.com/es-es/windows/package-manager/winget/)
 ```
@@ -32,7 +32,7 @@ pyinstaller main.py --onefile --noconsole
 ```
 
 ## Usage
-1. If you just want to use the app, execute the file in ``dist`` folder, make sure to have [ffmpeg](https://ffmpeg.org/download.html) installed.
+### 1. If you just want to use the app, execute the file in ``dist`` folder, make sure to have [ffmpeg](https://ffmpeg.org/download.html) installed.
 
 ```
 cd dist
@@ -45,8 +45,8 @@ Linux
 ```
 ./main
 ```
-3. If you are going to modify the code, make sure to follow the [requirements](https://github.com/Gokruzk/python_youtube_converter/tree/main?tab=readme-ov-file#requirements) steps and then run ``main.py``
-4. The files will store into a folder called ``Music Downloaded`` in your ``root`` folder
+### 3. If you are going to modify the code, make sure to follow the [requirements](https://github.com/Gokruzk/python_youtube_converter/tree/main?tab=readme-ov-file#requirements) steps and then run ``main.py``
+### 4. The files will store into a folder called ``Music Downloaded`` in your ``root`` folder
 
 ## License
 
