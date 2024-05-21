@@ -19,7 +19,7 @@ pyinstaller main.py --onefile --noconsole
 ```
 
 ## Usage
-1. If you just want to use the app, execute the file in ``dist`` folder
+1. If you just want to use the app, execute the file in ``dist`` folder, make sure to have [ffmpeg](https://ffmpeg.org/download.html)
 2. If you are going to modify the code, make sure to follow the requirements steps and then run ``main.py``
 3. The music will store into a folder called ``Music Downloaded`` in your ``root`` folder
 
