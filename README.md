@@ -47,7 +47,3 @@ Linux
 ```
 ### 3. If you are going to modify the code, make sure to follow the [requirements](https://github.com/Gokruzk/python_youtube_converter/tree/main?tab=readme-ov-file#requirements) steps and then run ``main.py``
 ### 4. The files will store into a folder called ``Music Downloaded`` in your ``root`` folder
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
