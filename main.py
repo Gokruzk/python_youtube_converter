@@ -16,7 +16,7 @@ def main():
     helpmenu = Menu(menubar, tearoff=0)
     #about tag
     menubar.add_cascade(label='About', menu=helpmenu)
-    helpmenu.add_command(label='About me', command=lambda: popups('About me', 'Nigell Marcel Jama Oyarvide'))
+    helpmenu.add_command(label='About me', command=lambda: popups('About me', 'Gokruzk'))
     menubar.add_command(label='Exit', command=root.destroy)
     #message
     welcome_message = Label(
