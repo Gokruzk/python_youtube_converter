@@ -7,18 +7,18 @@ from popup import popups
 
 # download path
 home = Path.home()
-download_folder = Path(home, "Music Downloaded")
+download_folder = Path(home, "Music_Downloaded")
 if not download_folder.exists():
     os.mkdir(download_folder)
 os.chdir(download_folder)
 
 
-def check_url(url):
+def check_url(url: str):
     flag = 'youtu' == url[8:13] or 'youtu' == url[12:17]
     return flag
 
 
-def rename_file(file):
+def rename_file(file: str) -> list[str]:
     # remove spaces
     input_file = file.split(" ")
     input_file = "".join(input_file)
@@ -41,12 +41,12 @@ def on_progress(stream, chunk, bytes_remaining, progressbar: ttk.Progressbar):
     progressbar.update()
 
 
-def action(url):
+def action(url: str):
     progressbar = ttk.Progressbar(
         orient="horizontal", length=300, mode="determinate")
     progressbar.config(maximum=100)
     progressbar.place(x=30, y=80, width=100)
-    enlace = url.get()
+    enlace: str = url.get()
     print(enlace)
     if check_url(enlace):
         try:
@@ -55,9 +55,11 @@ def action(url):
             descarga = video.streams.get_audio_only()
             descarga.download()
             popups('Download', 'Successfully downloaded')
+        except Exception as e:
+            popups('Download error', e)
+        try:
             # get file name
-            file = descarga.default_filename
-            input_file = os.path.basename(Path(download_folder, file))
+            input_file = descarga.default_filename
             # rename file
             input_file, output_file = rename_file(input_file)
             # convert to mp3
@@ -65,7 +67,6 @@ def action(url):
             # remove mp4 file
             os.remove(input_file)
         except Exception as e:
-            popups('Download', 'Download error')
-            print(e)
+            popups('Convertion error', e)
     else:
         popups('Process', 'It\'s not a youtube url')
